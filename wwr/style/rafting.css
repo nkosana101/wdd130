@@ -1,0 +1,262 @@
+/* ===== CSS VARIABLES (Color Scheme) ===== */
+:root {
+    /* Color Scheme with good contrast */
+    --primary-color: #2c5aa0;
+    /* Dark blue for headings */
+    --secondary-color: #4a90e2;
+    /* Medium blue for accents */
+    --accent1-color: #333333;
+    /* Dark gray for body text */
+    --accent2-color: #f0f8ff;
+    /* Light blue for backgrounds */
+    --accent3-color: #f8f9fa;
+    /* Very light gray for sections */
+
+    /* Font Variables */
+    --heading-font: 'Georgia', 'Times New Roman', serif;
+    --body-font: 'Arial', 'Helvetica', sans-serif;
+}
+
+/* ===== RESET BOX MODEL ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== BODY STYLES ===== */
+body {
+    font-family: var(--body-font);
+    color: var(--accent1-color);
+    line-height: 1.6;
+}
+
+/* ===== PAGE WIDTH & CENTERING ===== */
+header,
+main,
+footer {
+    width: 840px;
+    margin: 0 auto;
+}
+
+/* ===== HEADINGS ===== */
+h1,
+h2 {
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+}
+
+/* ===== CONSISTENT MARGINS & PADDING ===== */
+nav,
+p,
+section,
+article {
+    margin: 16px;
+    padding: 8px;
+}
+
+/* ===== HEADER & NAVIGATION ===== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--accent2-color);
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+header img {
+    margin: 16px;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+/* ===== HERO SECTION WITH OVERLAYS ===== */
+.hero {
+    position: relative;
+    /* Allows child elements to be positioned absolutely */
+    margin-bottom: 40px;
+}
+
+/* Hero background image */
+.hero img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Company title overlay */
+.hero h1 {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    padding: 16px;
+    text-align: center;
+    opacity: 0.7;
+    background-color: var(--accent1-color);
+    color: #fff;
+    margin: 0;
+    z-index: 1;
+}
+
+/* Mission article overlay */
+.hero article {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+/* Image inside the article */
+.hero article img {
+    float: right;
+    width: 125px;
+    margin-left: 15px;
+    margin-bottom: 10px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Clear float for paragraph */
+.hero article p {
+    overflow: auto;
+    margin: 0;
+    padding: 0;
+    line-height: 1.4;
+}
+
+/* ===== HISTORY SECTION ===== */
+section {
+    background-color: var(--accent3-color);
+    border-radius: 8px;
+    border-left: 4px solid var(--secondary-color);
+}
+
+section h2 {
+    margin: 16px;
+    padding: 8px;
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+/* ===== ADVENTURE SECTION ===== */
+section:last-of-type {
+    min-height: 100px;
+    text-align: center;
+}
+
+section:last-of-type h2 {
+    border-bottom: none;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--accent2-color);
+    border-top: 2px solid var(--secondary-color);
+    padding: 16px 0;
+}
+
+footer p {
+    margin: 0;
+    padding: 0 16px;
+    color: var(--primary-color);
+    font-size: 0.9rem;
+}
+
+.socialmedia {
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0 16px;
+}
+
+/* Remove underlines from social media links */
+.socialmedia a {
+    text-decoration: none;
+}
+
+.socialmedia img {
+    display: block;
+    transition: transform 0.3s;
+}
+
+.socialmedia a:hover img {
+    transform: scale(1.1);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 860px) {
+
+    header,
+    main,
+    footer {
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    .hero article {
+        position: static;
+        width: auto;
+        margin: 20px auto;
+    }
+
+    .hero article img {
+        float: none;
+        display: block;
+        margin: 0 auto 16px;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 1.5rem;
+        padding: 12px;
+    }
+
+    .hero article {
+        left: 20px;
+        bottom: 20px;
+        width: calc(100% - 40px);
+    }
+}
