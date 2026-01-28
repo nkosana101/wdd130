@@ -1,63 +1,212 @@
-/* Universal Reset */
+/* 1. Universal Selector Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* CSS Variables */
+/* 2. CSS Variables in :root  */
 :root {
-    --primary-color: #2c5aa0;
-    --secondary-color: #4a90e2;
-    --accent-color: #ff6b35;
-    --text-color: #333;
-    --background-color: #f5f5f5;
+    --primary-color: #1e3a8a;
+    --secondary-color: #3b82f6;
+    --accent-color: #f59e0b;
+    --text-color: #1f2937;
+    --background-color: #f9fafb;
+    --white: #ffffff;
 }
 
-/* Hero Section */
+/* 3. Base Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 4. Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 3px solid var(--primary-color);
+    margin-bottom: 30px;
+}
+
+header img {
+    width: 150px;
+    height: auto;
+}
+
+/* 5. Navigation Styles */
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+
+/* 6. Hero Section */
 .hero {
     position: relative;
+    /* ✅ This is correct */
     width: 100%;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    overflow: hidden;
+    min-height: 400px;
+    /* Added for better display */
 }
 
+/* Hero background image */
 .hero img {
     width: 100%;
-    height: auto;
+    height: 400px;
+    /* Increased height for overlay visibility */
+    object-fit: cover;
     display: block;
 }
 
+/* Hero heading overlay - MUST have position: absolute */
 .hero h1 {
     position: absolute;
-    top: 20px;
-    left: 20px;
+    /* REQUIRED: position absolute */
+    top: 30px;
+    left: 30px;
+    background-color: rgba(255, 255, 255, 0.95);
+    /* Made more opaque for better contrast */
+    padding: 15px 25px;
+    border-radius: 8px;
     color: var(--primary-color);
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 10px 20px;
-    border-radius: 5px;
+    /* Using dark blue for good contrast */
+    font-size: 2.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0;
+    /* Reset any margin */
+    z-index: 2;
+    /* Ensure it's above image */
 }
 
+/* Hero article overlay - MUST have position: absolute */
 .hero article {
     position: absolute;
-    bottom: 20px;
-    right: 20px;
+    /* REQUIRED: position absolute */
+    bottom: 30px;
+    right: 30px;
     width: 300px;
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 15px;
-    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.95);
+    /* Made more opaque for better contrast */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    /* Ensure it's above image */
 }
 
+/* Image inside article - MUST have float: right */
 .hero article img {
     float: right;
-    margin-left: 15px;
+    /* REQUIRED: float right */
     width: 100px;
-    height: auto;
+    height: 100px;
+    border-radius: 50%;
+    margin-left: 15px;
+    margin-bottom: 10px;
+    object-fit: cover;
 }
 
-/* Social Media Links */
+/* Clearfix for floated image inside article */
+.hero article::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* 7. Section Styles */
+section {
+    background-color: var(--white);
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+/* 8. Adventure Gallery */
+.adventure-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.adventure-images img {
+    width: 180px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 3px solid var(--secondary-color);
+}
+
+/* 9. Footer Styles */
+footer {
+    background-color: var(--primary-color);
+    /* Dark blue for contrast with white text */
+    color: var(--white);
+    padding: 30px;
+    text-align: center;
+    margin-top: 40px;
+    border-radius: 8px 8px 0 0;
+}
+
+footer p {
+    margin-bottom: 20px;
+    color: var(--white);
+    /* Explicitly set to white */
+}
+
+/* 10. Social Media Navigation */
+.socialmedia {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 20px;
+}
+
 .socialmedia a {
     text-decoration: none;
+    /* REQUIRED: removes underline */
     display: inline-block;
-    margin: 0 10px;
+    padding: 8px;
+    background-color: var(--white);
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.socialmedia a:hover {
+    transform: translateY(-5px);
 }
 
 .socialmedia img {
@@ -65,39 +214,28 @@
     height: 30px;
 }
 
-/* Fix Color Contrast Issues */
-h1 {
-    color: #1e3a8a;
-    /* Darker blue for better contrast */
+/* Fix contrast for footer links */
+footer a {
+    color: var(--white);
+    text-decoration: none;
+    /* Also remove underline from footer links */
+}
+
+/* Ensure proper use of CSS variables for consistency */
+h1,
+h2,
+h3 {
+    color: var(--primary-color);
+    /* Using variable instead of hardcoded color */
 }
 
 a {
-    color: #1e3a8a;
-    /* Darker blue for better contrast */
-    background-color: #ffffff;
-    padding: 5px 10px;
-    border-radius: 3px;
+    color: var(--primary-color);
+    /* Using variable */
 }
 
-/* Additional required styles */
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--background-color);
-}
-
-section {
-    margin: 20px 0;
-    padding: 20px;
-    background-color: white;
-    border-radius: 5px;
-}
-
-footer {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 20px;
-    text-align: center;
-    margin-top: 30px;
+/* Specific fix for h1 contrast issue - ensure it's not using steelblue */
+h1 {
+    color: var(--primary-color);
+    /* This is #1e3a8a which has good contrast */
 }
