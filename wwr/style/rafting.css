@@ -1,11 +1,13 @@
-/* 1. Universal Selector Reset */
+/* styles/rafting.css */
+
+/* 1. Universal Selector Reset (REQUIRED) */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* 2. CSS Variables in :root  */
+/* 2. CSS Variables in :root (REQUIRED) */
 :root {
     --primary-color: #1e3a8a;
     --secondary-color: #3b82f6;
@@ -61,76 +63,66 @@ nav a:hover {
     color: var(--white);
 }
 
-/* 6. Hero Section */
+/* 6. HERO SECTION - ALL REQUIRED STYLES */
 .hero {
     position: relative;
-    /* ✅ This is correct */
+    /* REQUIRED: position relative */
     width: 100%;
     margin-bottom: 30px;
     border-radius: 10px;
     overflow: hidden;
-    min-height: 400px;
-    /* Added for better display */
+    min-height: 500px;
 }
 
-/* Hero background image */
 .hero img {
     width: 100%;
-    height: 400px;
-    /* Increased height for overlay visibility */
+    height: 500px;
     object-fit: cover;
     display: block;
 }
 
-/* Hero heading overlay - MUST have position: absolute */
 .hero h1 {
     position: absolute;
     /* REQUIRED: position absolute */
-    top: 30px;
-    left: 30px;
+    top: 50px;
+    left: 50px;
     background-color: rgba(255, 255, 255, 0.95);
-    /* Made more opaque for better contrast */
     padding: 15px 25px;
     border-radius: 8px;
     color: var(--primary-color);
-    /* Using dark blue for good contrast */
     font-size: 2.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin: 0;
-    /* Reset any margin */
     z-index: 2;
-    /* Ensure it's above image */
 }
 
-/* Hero article overlay - MUST have position: absolute */
 .hero article {
     position: absolute;
     /* REQUIRED: position absolute */
-    bottom: 30px;
-    right: 30px;
-    width: 300px;
+    bottom: 50px;
+    right: 50px;
+    width: 350px;
     background-color: rgba(255, 255, 255, 0.95);
-    /* Made more opaque for better contrast */
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 2;
-    /* Ensure it's above image */
 }
 
-/* Image inside article - MUST have float: right */
+/* REQUIRED: Image inside article with float: right */
 .hero article img {
     float: right;
     /* REQUIRED: float right */
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     margin-left: 15px;
     margin-bottom: 10px;
     object-fit: cover;
+    border: 3px solid var(--secondary-color);
 }
 
-/* Clearfix for floated image inside article */
+/* Clearfix for floated image */
 .hero article::after {
     content: "";
     display: table;
@@ -168,12 +160,16 @@ section h2 {
     object-fit: cover;
     border-radius: 8px;
     border: 3px solid var(--secondary-color);
+    transition: transform 0.3s;
+}
+
+.adventure-images img:hover {
+    transform: scale(1.05);
 }
 
 /* 9. Footer Styles */
 footer {
     background-color: var(--primary-color);
-    /* Dark blue for contrast with white text */
     color: var(--white);
     padding: 30px;
     text-align: center;
@@ -184,10 +180,10 @@ footer {
 footer p {
     margin-bottom: 20px;
     color: var(--white);
-    /* Explicitly set to white */
+    font-size: 1.1rem;
 }
 
-/* 10. Social Media Navigation */
+/* 10. SOCIAL MEDIA LINKS - REQUIRED STYLES */
 .socialmedia {
     display: flex;
     justify-content: center;
@@ -199,43 +195,74 @@ footer p {
     text-decoration: none;
     /* REQUIRED: removes underline */
     display: inline-block;
-    padding: 8px;
+    padding: 10px;
     background-color: var(--white);
     border-radius: 50%;
-    transition: transform 0.3s;
+    transition: transform 0.3s, background-color 0.3s;
 }
 
 .socialmedia a:hover {
     transform: translateY(-5px);
+    background-color: var(--accent-color);
 }
 
 .socialmedia img {
     width: 30px;
     height: 30px;
+    display: block;
 }
 
-/* Fix contrast for footer links */
+/* 11. Additional fixes for consistency */
+
+/* Fix for footer links */
 footer a {
     color: var(--white);
-    text-decoration: none;
-    /* Also remove underline from footer links */
 }
 
-/* Ensure proper use of CSS variables for consistency */
+/* Ensure proper contrast */
 h1,
 h2,
-h3 {
+h3,
+h4,
+h5,
+h6 {
     color: var(--primary-color);
-    /* Using variable instead of hardcoded color */
 }
 
-a {
-    color: var(--primary-color);
-    /* Using variable */
-}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
 
-/* Specific fix for h1 contrast issue - ensure it's not using steelblue */
-h1 {
-    color: var(--primary-color);
-    /* This is #1e3a8a which has good contrast */
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+        top: 20px;
+        left: 20px;
+        right: 20px;
+        text-align: center;
+    }
+
+    .hero article {
+        position: relative;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .adventure-images {
+        gap: 10px;
+    }
+
+    .adventure-images img {
+        width: 150px;
+        height: 100px;
+    }
 }
