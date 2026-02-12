@@ -1,0 +1,61 @@
+/* ===== REQUIRED RULES ===== */
+
+/* Navigation styling */
+nav {
+    background-color: steelblue;
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    padding: 10px;
+    display: block;
+}
+
+/* Main content area */
+main {
+    max-width: 840px;
+    margin: 0 auto;
+}
+
+/* Heading 1 */
+h1 {
+    color: steelblue;
+}
+
+/* Main image styling */
+main img {
+    width: 150px;
+    height: auto;
+    border: 1px solid steelblue;
+    padding: 2px;
+    box-shadow: 0 0 30px gray;
+}
+
+/* Sidebar styling */
+aside {
+    width: 300px;
+    margin: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    background-color: #eee;
+    color: #333;
+}
+
+/* Sidebar image */
+aside img {
+    width: 200px;
+    height: auto;
+}
+
+/* Paragraph */
+p {
+    padding: 0;
+}
+
+/* Footer */
+footer {
+    margin-top: 20px;
+    border-top: 1px solid #000;
+    text-align: center;
+}
