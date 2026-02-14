@@ -4,81 +4,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="About Dee Water Adventure Company">
+
+    <meta name="description" content="Contact Dee Water Adventure Co. for general inquiries, trip reservations, or website suggestions. Find our address, phone number, email, and location map here.">
     <meta name="author" content="Nkosana Dlamini">
-    <title>Dee Water Adventure Co. | About Us</title>
+
+    
+    <title>Contact Us | Dee Water Adventure Co.</title>
 
     <link rel="stylesheet" href="style/rafting.css">
 </head>
 
 <body>
 
+    
     <header>
         <img src="images/logo.png" alt="Dee Water Adventure Logo">
 
-        <nav>
+        <nav class="navbar">
             <a href="index.html">Home</a>
             <a href="about.html">About Us</a>
             <a href="trips.html">Trips</a>
             <a href="contact.html">Contact Us</a>
         </nav>
-        
     </header>
 
     <main>
-        <div class="hero">
-            <img src="images/hero.jpg" alt="White water rafting adventure">
 
-            <h1>Dee Water Adventure Company</h1>
+        <h1>Contact Us</h1>
 
-            <article>
-                <img src="images/client.jpg" alt="Photo of client">
-                <p>
-                    Our mission is to provide safe, exciting, and unforgettable rafting
-                    adventures for people of all experience levels.
-                </p>
-            </article>
-        </div>
+    
+        <section class="contact-info-section">
+            <h2>Company Information</h2>
 
-        <section>
-            <h2>History</h2>
-            <p>
-                Dee Water Adventure Company was founded in 1998 with a passion for rivers,
-                adventure, and safety. What started small has grown into a trusted rafting
-                company serving thousands of adventurers every year.
-            </p>
-        </section>
+            <div class="contact-grid">
 
-        <section>
-            <h2>Adventure Awaits You!</h2>
+            <div class="contact-details">
+                ...
+            </div>
+            
+            
 
-            <div class="adventure-gallery">
-                <figure>
-                    <img src="images/adventure1.jpg" alt="The biginning of the adventure">
-                    <figcaption>The biginning of the adventure</figcaption>
-                </figure>
+            <p><strong>Address:</strong></p>
+            <address>
+                3 Heather Avenue, Lilianton<br>
+                Boksburg, 1459<br>
+                Gauteng, South Africa
+            </address>
 
-                <figure>
-                    <img src="images/adventure2.jpg" alt="The adventure started">
-                    <figcaption>The adventure started</figcaption>
-                </figure>
+            <p><strong>Phone:</strong> +27 61 464 5837</p>
+            <p><strong>Email:</strong> info@deewateradventure.com</p>
 
-                <figure>
-                    <img src="images/adventure3.jpg" alt="Half Day Adventure rafting trip">
-                    <figcaption>Half Day Adventure</figcaption>
-                </figure>
-
-                <figure>
-                    <img src="images/adventure4.jpg" alt="Rapid Run rafting experience">
-                    <figcaption>Rapid Run</figcaption>
-                </figure>
-
-                <figure>
-                    <img src="images/adventure5.jpg" alt="Wild Water rafting adventure">
-                    <figcaption>Wild Water</figcaption>
-                </figure>
+            <div class="map">
+            
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m22!1m8!1m3!1d71422.66901414096!2d27.973830163887538!3d-25.887723756338797!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d-25.8781204!2d28.032217499999998!4m5!1s0x1e95752acfb4d02d%3A0xfdf4c6d0f22ad87a!2sCresta%20Junction%2C%20Judges%20Ave%2C%20Cresta%2C%20Johannesburg%2C%202195!3m2!1d-26.1273736!2d27.9699726!5e0!3m2!1sen!2sza!4v1770907019101!5m2!1sen!2sza"
+                    width="400"
+                    height="300"
+                    loading="lazy"
+                    allowfullscreen>
+                </iframe>
             </div>
         </section>
+
+
+        <section class="team-section">
+            <h2>Meet Our Team</h2>
+
+            <div class="team-grid">
+
+                <div class="employee-card">
+                <img src="images/Christina Mngo.jpeg" alt="Christina Mngo"> 
+                <h3>Christina Mngo</h3>
+                <p class="employee-title">General Manager</p>
+                </div>
+
+            <div class="employee-card">
+                <img src="images/Gugu Lethu.jpeg" alt="Gugu Lethu>
+                <h3>Gugu Lethu</h3>
+                <p class="employee-title">Lead River Guide</p>
+
+            <div class="employee-card">
+                <img src="images/Nkosana Dlams.jpg" alt="Nkosana Dlams">
+                <h3>Nkosana Dlams</h3>
+                <p class="employee-title">Support Specialist</p>
+            </div>
+
+        </section>
+
+        <section class="contact-form">
+            <h2>Send Us a Message</h2>
+
+            <form action="#" method="post">
+
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+
+                <fieldset>
+                    <legend>Purpose of Your Message</legend>
+
+                    <label>
+                        <input type="radio" name="purpose" value="general" required>
+                        General Inquiry
+                    </label>
+
+                    <label>
+                        <input type="radio" name="purpose" value="reservation">
+                        Reservation Question
+                    </label>
+
+                    <label>
+                        <input type="radio" name="purpose" value="suggestion">
+                        Website Suggestion
+                    </label>
+                </fieldset>
+
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <label>
+                    <input type="checkbox" name="subscribe">
+                    Please subscribe me to the monthly newsletter
+                </label>
+
+                <button type="submit" class="submit-btn">
+                    Send My Message
+                </button>
+
+            </form>
+        </section>
+
     </main>
 
     <footer>
@@ -97,7 +154,5 @@
         </nav>
     </footer>
 
-    
 </body>
-
 </html>
