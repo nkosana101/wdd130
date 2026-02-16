@@ -1,404 +1,601 @@
-/* =====================================================
-   1. UNIVERSAL RESET & VARIABLES
-===================================================== */
+/* rafting.css - Complete styles for Dee Water Adventure Co. */
+
+/* ----- RESET & BASE ----- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-:root {
-    --primary-color: #1e3a8a;
-    --secondary-color: #3b82f6;
-    --accent-color: #f59e0b;
-    --text-color: #1f2937;
-    --background-color: #f9fafb;
-    --white: #ffffff;
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #1e2b37;
+    background-color: #506881;
 }
 
-/* =====================================================
-   2. BASE STYLES
-===================================================== */
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--background-color);
+.container {
+    width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
 }
 
-/* =====================================================
-   3. HEADER & NAVIGATION
-===================================================== */
+/* ----- HEADER & NAVIGATION (common to all pages) ----- */
 header {
-    display: grid;
-    grid-template-columns: 150px 1fr;
+    background-color: #0b3b5c; /* dark blue */
+    color: white;
+    padding: 1rem 0;
+    display: flex;
     align-items: center;
-    padding: 20px 0;
-    border-bottom: 3px solid var(--primary-color);
-    margin-bottom: 30px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 header img {
-    width: 150px;
-    height: auto;
+    height: 40px;
+    width: auto;
 }
 
-header nav {
+.navbar {
     display: flex;
-    justify-content: flex-end;
-    gap: 20px;
+    gap: 2rem;
+    flex-wrap: wrap;
 }
 
-header nav a {
+.navbar a {
+    color: white;
     text-decoration: none;
-    color: var(--primary-color);
+    font-weight: 600;
+    padding-bottom: 0.25rem;
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+.navbar a:hover {
+    color: #f4c542; /* warm yellow */
+}
+
+.navbar a.active {
+    border-bottom: 3px solid #f4c542;
+    color: #f4c542;
+}
+
+/* ----- FOOTER (common) ----- */
+footer {
+    background-color: #0b3b5c;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+footer p {
+    margin-bottom: 1rem;
+}
+
+.socialmedia {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.socialmedia a {
+    display: inline-block;
+    transition: transform 0.3s;
+}
+
+.socialmedia a:hover {
+    transform: scale(1.1);
+}
+
+.socialmedia img {
+    width: 32px;
+    height: 32px;
+}
+
+/* ----- BUTTONS ----- */
+.btn {
+    display: inline-block;
+    background-color: #f4c542;
+    color: #0b3b5c;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 50px;
     font-weight: bold;
-    padding: 8px 16px;
-    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    font-size: 1rem;
 }
 
-header nav a:hover {
-    background-color: var(--secondary-color);
-    color: var(--white);
+.btn:hover {
+    background-color: #e0b438;
+    transform: translateY(-2px);
 }
 
-/* =====================================================
-   4. HERO SECTION (for other pages)
-===================================================== */
+.btn:active {
+    transform: translateY(0);
+}
+
+/* ----- HERO SECTION (About & Home pages) ----- */
 .hero {
     position: relative;
     width: 100%;
-    margin-bottom: 30px;
+    height: 70vh;
+    min-height: 500px;
+    overflow: hidden;
 }
 
 .hero img {
     width: 100%;
-    height: 60vh;
+    height: 100%;
     object-fit: cover;
+    display: block;
 }
 
 .hero h1 {
     position: absolute;
-    top: 40px;
-    left: 40px;
-    background-color: var(--white);
-    padding: 15px 25px;
-    border-radius: 6px;
-    color: var(--primary-color);
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 1rem 2rem;
+    border-radius: 8px;
     font-size: 2.5rem;
+    text-align: center;
+    z-index: 2;
+    width: 90%;
+    max-width: 800px;
 }
 
 .hero article {
     position: absolute;
-    bottom: 40px;
-    right: 40px;
-    width: 320px;
-    background-color: var(--white);
-    padding: 15px;
-    border-radius: 6px;
+    bottom: 15%;
+    right: 5%;
+    width: 300px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    z-index: 2;
 }
 
 .hero article img {
-    float: right;
-    width: 100px;
-    height: 100px;
-    margin-left: 10px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
+    object-fit: cover;
 }
 
-.hero article::after {
-    content: "";
-    display: table;
-    clear: both;
+/* ----- PAGE TITLES (used on Trips & Contact) ----- */
+.page-title {
+    text-align: center;
+    margin: 2rem 0 1rem;
+    color: #0b3b5c;
+    font-size: 2.5rem;
 }
 
-/* =====================================================
-   5. GENERAL SECTION STYLES
-===================================================== */
-section {
-    background-color: var(--white);
-    padding: 30px;
-    margin-bottom: 30px;
-    border-radius: 6px;
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #0b3b5c;
 }
 
-section h2 {
-    color: var(--primary-color);
-    margin-bottom: 20px;
-    border-bottom: 2px solid var(--accent-color);
-    padding-bottom: 10px;
+/* ----- HISTORY SECTION (About page) ----- */
+.history {
+    padding: 3rem 0;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-/* =====================================================
-   6. CONTACT PAGE – COMPANY INFO
-===================================================== */
-.company-info {
-    background-color: var(--white);
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+.history h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #0b3b5c;
 }
 
-.company-info address {
+.history p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+/* ----- ADVENTURE GALLERY (About page) & GRID LAYOUT (Home page) ----- */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.grid-item {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.grid-item:hover {
+    transform: translateY(-5px);
+}
+
+.grid-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.grid-item figcaption,
+.grid-item .content {
+    padding: 1rem;
+    text-align: center;
+    font-weight: bold;
+    color: #0b3b5c;
+}
+
+.grid-item .content {
+    text-align: left;
+}
+
+/* ----- NEWSLETTER (Home page) ----- */
+.newsletter {
+    background-color: #e7f0f7;
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.newsletter h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #0b3b5c;
+}
+
+.newsletter form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 2rem auto 0;
+}
+
+.newsletter input {
+    flex: 1 1 200px;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    font-size: 1rem;
+}
+
+.newsletter button {
+    flex: 0 0 auto;
+    background-color: #0b3b5c;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 0.75rem 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.newsletter button:hover {
+    background-color: #0e4b72;
+}
+
+/* ----- TRIP CARDS (Trips page) ----- */
+.trip-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.trip-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.trip-card:hover {
+    transform: translateY(-5px);
+}
+
+.trip-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.trip-info {
+    padding: 1.5rem;
+}
+
+.trip-info h3 {
+    margin-bottom: 0.5rem;
+    color: #0b3b5c;
+    font-size: 1.5rem;
+}
+
+.trip-info .duration {
+    color: #f4c542;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.trip-info .description {
+    margin: 1rem 0;
+    line-height: 1.5;
+}
+
+.trip-info .price {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #0b3b5c;
+}
+
+/* ----- CALL TO ACTION BANNER (Trips & Home pages) ----- */
+.cta-banner {
+    background-color: #f4c542;
+    color: #0b3b5c;
+    text-align: center;
+    padding: 3rem 1rem;
+    margin: 3rem 0;
+}
+
+.cta-banner .container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cta-banner h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.cta-banner .btn {
+    background-color: #0b3b5c;
+    color: white;
+    margin-top: 1rem;
+}
+
+.cta-banner .btn:hover {
+    background-color: #0e4b72;
+}
+
+/* ----- TRIPS TABLE (Trips page) ----- */
+.trips-table-section {
+    padding: 3rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.table-container {
+    overflow-x: auto; /* horizontal scroll on small screens */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th {
+    background-color: #0b3b5c;
+    color: white;
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+}
+
+td {
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover {
+    background-color: #f5f9ff;
+}
+
+/* ----- CONTACT PAGE STYLES ----- */
+/* Company info grid */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    align-items: start;
+    margin: 0 auto;
+}
+
+.contact-details address {
     font-style: normal;
     line-height: 1.8;
     margin: 1rem 0;
 }
 
-.company-info p {
-    margin: 0.5rem 0;
-}
-
-.company-info .map {
-    margin-top: 2rem;
-}
-
-.company-info iframe {
+.map iframe {
     width: 100%;
     height: 300px;
-    border: none;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-/* =====================================================
-   7. CONTACT PAGE – EMPLOYEES (vertical stack)
-===================================================== */
-.employees {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* Team grid */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 2rem;
-    padding: 1rem 0;
-    background-color: #f1f5f9; 
+    margin: 2rem 0;
 }
 
-.employees figure {
-    width: 100%;
-    max-width: 200px;
-    margin: 0; auto;
+.employee-card {
     text-align: center;
-    background: var(--white);
+    background: white;
     padding: 1.5rem;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: transform 0.2s;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
 }
 
-.employees figure:hover {
+.employee-card:hover {
     transform: translateY(-5px);
 }
 
-.employees img {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
+.employee-card img {
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
+    object-fit: cover;
     margin-bottom: 1rem;
-    border: 4px solid var(--primary-color);
+    border: 3px solid #f4c542;
 }
 
-.employees figcaption {
-    font-weight: bold;
-    color: var(--primary-color);
-    font-size: 1.2rem;
-}
-
-/* =====================================================
-   8. CONTACT PAGE – FORM
-===================================================== */
-.contact-form {
-    max-width: 700px;
-    margin: 0 auto;
-    background: #f8fafc;
-    padding: 2rem;
-    border-radius: 24px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.02);
-    border: 1px solid #e2e8f0;
-}
-
-.contact-form label {
-    display: block;
-    font-weight: 600;
-    margin-top: 1.2rem;
-    margin-bottom: 0.3rem;
-    color: #1e293b;
-}
-
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form textarea,
-.contact-form select {
-    width: 100%;
-    padding: 0.8rem 1rem;
-    border: 1px solid #cbd5e1;
-    border-radius: 8px;
-    font-family: inherit;
-    font-size: 1rem;
-    transition: border 0.2s, box-shadow 0.2s;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus,
-.contact-form select:focus {
-    outline: none;
-    border-color: var(--secondary-color);
-    box-shadow: 0 0 0 3px rgba(59,130,246,0.1);
-}
-
-.contact-form fieldset {
-    border: none;
-    margin: 1.5rem 0 0.5rem;
-    padding: 0;
-}
-
-.contact-form legend {
-    font-weight: 600;
-    color: #1e293b;
+.employee-card h3 {
+    color: #0b3b5c;
     margin-bottom: 0.5rem;
 }
 
-.contact-form .radio-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
+.employee-title {
+    color: #f4c542;
+    font-weight: bold;
 }
 
-.contact-form .radio-group label {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
+/* Contact Form */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-form label {
+    font-weight: 600;
+    color: #0b3b5c;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.contact-form fieldset {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+.contact-form fieldset label {
     font-weight: normal;
-    margin-top: 0;
+    display: block;
+    margin: 0.5rem 0;
 }
 
 .contact-form .checkbox-label {
     display: flex;
     align-items: center;
-    gap: 0.6rem;
+    gap: 0.5rem;
     font-weight: normal;
-    margin: 1.8rem 0 1.2rem;
-    cursor: pointer;
 }
 
-.contact-form button[type="submit"] {
-    width: 100%;
-    padding: 1rem;
-    font-size: 1.1rem;
-    margin-top: 1rem;
-    background: var(--primary-color);
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.2s;
+.contact-form .checkbox-label input {
+    width: auto;
 }
 
-.contact-form button[type="submit"]:hover {
-    background: var(--secondary-color);
+.contact-form .btn {
+    align-self: flex-start;
 }
 
-/* =====================================================
-   9. FOOTER & SOCIAL MEDIA
-===================================================== */
-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--primary-color);
-    color: var(--white);
-    padding: 20px;
-    margin-top: 40px;
-}
-
-footer p {
-    color: white;
-    font-size: 1rem;
-}
-
-.socialmedia {
-    display: flex;
-    gap: 15px;
-}
-
-.socialmedia a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    background-color: var(--white);
-    color: var(--primary-color);
-    border-radius: 50%;
-    transition: 0.2s;
-    font-size: 1.2rem;
-    text-decoration: none;
-}
-
-.socialmedia a:hover {
-    background-color: var(--accent-color);
-    color: var(--white);
-    transform: scale(1.1);
-}
-
-.socialmedia img {
-    width: 30px;
-    height: 30px;
-    display: block;
-}
-
-/* =====================================================
-   10. RESPONSIVE DESIGN 
-===================================================== */
+/* ----- RESPONSIVE ADJUSTMENTS ----- */
 @media (max-width: 768px) {
     header {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+        gap: 1rem;
         text-align: center;
-        gap: 15px;
     }
-
-    header nav {
+    
+    .navbar {
         justify-content: center;
-        flex-wrap: wrap;
+        gap: 1rem;
     }
-
+    
     .hero h1 {
         font-size: 1.8rem;
-        left: 20px;
-        right: 20px;
-        text-align: center;
+        top: 15%;
+        width: 95%;
+        padding: 0.75rem 1rem;
     }
-
+    
     .hero article {
         position: static;
-        width: 100%;
-        margin-top: 20px;
+        width: 90%;
+        margin: 1rem auto;
+        transform: none;
+        background-color: rgba(0, 0, 0, 0.8);
     }
-
-    .adventure-gallery {
-        grid-template-columns: repeat(2, 1fr);
+    
+    .hero {
+        height: auto;
+        min-height: auto;
     }
+    
+    .hero img {
+        height: 400px;
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .page-title {
+        font-size: 2rem;
+    }
+    
+    .section-title {
+        font-size: 1.75rem;
+    }
+}
 
-    footer {
+@media (max-width: 480px) {
+    .trip-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .newsletter form {
         flex-direction: column;
-        gap: 15px;
-        text-align: center;
     }
-
-    /* Contact page adjustments */
-    .employees figure {
-        max-width: 280px;
-    }
-
-    .contact-form {
-        padding: 1.5rem;
-    }
-
-    .company-info iframe {
-        height: 250px;
+    
+    .newsletter input,
+    .newsletter button {
+        width: 100%;
     }
 }
