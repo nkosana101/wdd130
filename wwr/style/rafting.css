@@ -32,3 +32,13 @@ footer {
     border-top: 1px solid #000;
     text-align: center;
 }
+.adventure-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.adventure-gallery figure {
+    margin: 0; /* Resets default browser margin for figures */
+}
