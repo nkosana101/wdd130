@@ -109,4 +109,42 @@ footer {
 
 .socialmedia img {
     width: 30px;
+}iframe {
+    width: 100%;
+    height: auto;
+    min-height: 300px;
+    border: none; /* Replaces the inline style="border:0" */
+}.contact-info iframe {
+  width: 100%;
+  height: 300px;
+  border: none; /* replaces inline style */
+}
+
+.employees {
+  display: flex;
+  gap: 20px;
+  justify-content: space-around;
+}
+
+.employees img {
+  width: 150px;
+  border-radius: 10px;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+button {
+  background-color: #0077cc;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #005fa3;
 }
