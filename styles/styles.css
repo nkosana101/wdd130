@@ -34,12 +34,13 @@ main img {
 
 /* Sidebar styling */
 aside {
-    width: 300px;
-    margin: 20px;
+    width: 20em;
+    margin: 1em;
     border: 1px solid rgba(0, 0, 0, 0.2);
-    padding: 15px;
+    padding: 1em;
     background-color: #eee;
     color: #333;
+    text-align: center;
 }
 
 /* Sidebar image */
@@ -55,7 +56,7 @@ p {
 
 /* Footer */
 footer {
-    margin-top: 20px;
+    margin-top: 1em;
     border-top: 1px solid #000;
     text-align: center;
 }
