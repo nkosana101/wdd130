@@ -1,62 +1,154 @@
-/* ===== REQUIRED RULES ===== */
+/* CSS Variables */
+:root {
+    --primary-color: #055a05;
+    --secondary-color: #f4a261;
+    --accent1-color: #264653;
+    --accent2-color: #e9c46a;
 
-/* Navigation styling */
-nav {
-    background-color: steelblue;
+    --heading-font: "Time New Roman", Georgia, serif;
+    --body-font: Arial, Helvetica, sans-serif;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Page Styling */
+body {
+    font-family: var(--body-font);
+    color: var(--accent1-color);
+    background-color: var(--accent2-color);
+}
+
+/* Layout Width */
+header,
+main,
+footer {
+    width: 840px;
+    margin: 0 auto;
+}
+
+/* Headings */
+h1,
+h2 {
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+}
+
+/* Spacing */
+nav,
+p,
+section,
+article {
+    margin: 16px;
+    padding: 8px;
+}
+
+/* Header */
+header {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    align-items: center;
+    background-color: var(--primary-color);
     padding: 10px;
+}
+
+header img {
+    width: 100px;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-around;
 }
 
 nav a {
     color: white;
-    padding: 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+}
+
+.hero img {
     display: block;
-}
-
-/* Main content area */
-main {
-    max-width: 840px;
-    margin: 0 auto;
-}
-
-/* Heading 1 */
-h1 {
-    color: steelblue;
-}
-
-/* Main image styling */
-main img {
-    width: 150px;
+    width: 100%;
     height: auto;
-    border: 1px solid steelblue;
-    padding: 2px;
-    box-shadow: 0 0 30px gray;
 }
 
-/* Sidebar styling */
-aside {
-    width: 20em;
-    margin: 1em;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    padding: 1em;
-    background-color: #eee;
-    color: #333;
+/* Hero Heading Overlay */
+.hero h1 {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    padding: 16px;
     text-align: center;
+    opacity: 0.8;
+    background-color: var(--primary-color);
+    color: white;
 }
 
-/* Sidebar image */
-aside img {
-    width: 200px;
-    height: auto;
+/* Hero Article Overlay */
+.hero article {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+
+    background-color: rgba(255, 255, 255, 0.85);
+    color: black;
+
+    padding: 16px;
+    border-radius: 10px;
 }
 
-/* Paragraph */
-p {
-    padding: 0;
+/* Article Image */
+.hero article img {
+    float: right;
+    width: 125px;
+    margin-left: 16px;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    box-shadow: 0 0 10px gray;
+}
+
+/* Sections */
+section {
+    background-color: white;
+    margin-top: 20px;
+    border-radius: 8px;
 }
 
 /* Footer */
 footer {
-    margin-top: 1em;
-    border-top: 1px solid #000;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 20px;
+    padding: 10px;
+
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Social Media */
+.socialmedia {
+    display: flex;
+    gap: 10px;
+}
+
+.socialmedia a {
+    text-decoration: none;
+}
+
+.socialmedia img {
+    width: 32px;
 }
