@@ -217,7 +217,7 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  ``` header {
+  header {
     flex-direction: column;
     text-align: center;
   }
