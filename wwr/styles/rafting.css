@@ -1,5 +1,4 @@
 /* ----- RESET & BASE ----- */
-
 * {
   margin: 0;
   padding: 0;
@@ -10,11 +9,24 @@ html {
   scroll-behavior: smooth;
 }
 
+/* ----- CSS VARIABLES (NEW) ----- */
+:root {
+  --primary-bg: #074482;
+  --header-bg: #2381b0;
+  --accent-color: #f4c542;
+  --accent-hover: #d47945;
+  --btn-bg: #36b78c;
+  --btn-hover: #a93f22;
+  --text-light: #f6f7f9;
+  --card-bg: white;
+  --footer-bg: #1e567c;
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
-  color: #f6f7f9;
-  background-color: #074482;
+  color: var(--text-light);
+  background-color: var(--primary-bg);
 }
 
 .container {
@@ -26,7 +38,7 @@ body {
 
 /* ----- HEADER ----- */
 header {
-  background-color: #2381b0;
+  background-color: var(--header-bg);
   color: white;
   padding: 1rem 6%;
   display: flex;
@@ -49,7 +61,6 @@ header img {
   top: 20px;
   left: 20px;
   color: white;
-  /* Add background, padding, etc. as needed */
 }
 
 .hero article {
@@ -60,6 +71,15 @@ header img {
   background-color: rgba(0, 0, 0, 0.6);
   color: white;
   padding: 1rem;
+}
+
+/* ----- FIX #1: ARTICLE IMAGE FLOAT ----- */
+.hero article img {
+  float: right;
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
+  max-width: 200px;
+  /* adjust as needed */
 }
 
 navbar {
@@ -77,17 +97,17 @@ navbar {
 }
 
 .navbar a:hover {
-  color: #d47945;
+  color: var(--accent-hover);
 }
 
 .navbar a.active {
-  border-bottom: 3px solid #f4c542;
-  color: #f4c542;
+  border-bottom: 3px solid var(--accent-color);
+  color: var(--accent-color);
 }
 
 /* ----- FOOTER ----- */
 footer {
-  background-color: #1e567c;
+  background-color: var(--footer-bg);
   color: white;
   text-align: center;
   padding: 2rem 0;
@@ -100,6 +120,16 @@ footer {
   gap: 1.5rem;
 }
 
+/* ----- FIX #2: SOCIAL MEDIA LINKS (remove underline) ----- */
+.socialmedia a {
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.socialmedia a:hover {
+  opacity: 0.8;
+}
+
 .socialmedia img {
   width: 32px;
   height: 32px;
@@ -108,7 +138,7 @@ footer {
 /* ----- BUTTONS ----- */
 .btn {
   display: inline-block;
-  background-color: #36b78c;
+  background-color: var(--btn-bg);
   color: #103146;
   padding: 0.75rem 2rem;
   border: none;
@@ -118,7 +148,7 @@ footer {
 }
 
 .btn:hover {
-  background-color: #a93f22;
+  background-color: var(--btn-hover);
 }
 
 .btn:focus {
@@ -140,7 +170,7 @@ footer {
 
 /* ----- CONTACT SECTION ----- */
 .contact-info-section {
-  background: white;
+  background: var(--card-bg);
   padding: 2rem;
   color: #1a6496;
 }
@@ -176,7 +206,7 @@ footer {
 
 .employee-card {
   text-align: center;
-  background: white;
+  background: var(--card-bg);
   padding: 2.5rem;
   border-radius: 8px;
   color: #7e1830;
@@ -191,7 +221,7 @@ footer {
 /* ----- FORM ----- */
 .contact-form {
   padding: 2rem;
-  background: white;
+  background: var(--card-bg);
   color: #0b3b5c;
 }
 
