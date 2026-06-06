@@ -26,7 +26,7 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5;
   color: #1e2f3e;
-  background-color: #f4f7fc;
+  background-color: var(--primary-bg);
 }
 
 .container {
@@ -38,8 +38,8 @@ body {
 
 /* ----- HEADER (FIXED: CSS GRID with 2 columns) ----- */
 header {
-  background-color: #0b3b4f;
-  color: white;
+  background-color: var(--header-bg);
+  color: var(--text-light);
   padding: 1rem 2rem;
   display: grid;
   grid-template-columns: auto 1fr;
@@ -199,7 +199,7 @@ nav a.active,
 /* ----- FOOTER (FIXED: social icons to the right) ----- */
 footer {
   background-color: var(--footer-bg);
-  color: white;
+  color: var(--text-light);
   padding: 1.5rem 2rem;
   display: flex;
   justify-content: space-between;
